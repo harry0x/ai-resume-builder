@@ -1,5 +1,4 @@
-
-import { generateAiResponse } from "@/lib/gemini";
+import { generateAiContent } from "@/lib/gemini";
 import { GenerateSummaryBody } from "@/types/ai.types";
 import { ApiResponse } from "@/types/api.types";
 import { NextRequest, NextResponse } from "next/server";
@@ -51,7 +50,7 @@ export async function POST(req: NextRequest) {
         Return only the resume summary text.
         `;
 
-        const result = await generateAiResponse(prompt);
+        const result = await generateAiContent(prompt);
 
         const summary = result;
 

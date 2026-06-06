@@ -1,6 +1,5 @@
-
-import { generateAiResponse } from "@/lib/gemini";
-import { GenerateSkillsBody } from "@/types/ai.types";
+import { generateAiContent } from "@/lib/gemini";
+import { GenerateSkillsBody, GenerateSummaryBody } from "@/types/ai.types";
 import { ApiResponse } from "@/types/api.types";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -71,7 +70,7 @@ export async function POST(req: NextRequest) {
             Return ONLY the raw JSON array.
             `;
 
-        const result = await generateAiResponse(prompt);
+        const result = await generateAiContent(prompt);
 
         let skills = result;
 

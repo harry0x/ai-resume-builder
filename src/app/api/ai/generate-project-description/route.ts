@@ -1,4 +1,4 @@
-import { generateAiResponse } from "@/lib/gemini";
+import { generateAiContent } from "@/lib/gemini";
 import { GenerateProjectDescriptionBody } from "@/types/ai.types";
 import { ApiResponse } from "@/types/api.types";
 import { NextRequest, NextResponse } from "next/server";
@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
             Return ONLY the project description text.
             `;
 
-        const result = await generateAiResponse(prompt);
+        const result = await generateAiContent(prompt);
 
         let projectDescription = result;
 

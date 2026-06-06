@@ -1,7 +1,6 @@
 import { generateToken } from "@/lib/jwt";
-import { connectDB } from "@/lib/mongoDB";
-import UserModel from "@/models/user.model";
-
+import { connectDB } from "@/lib/mongodb";
+import UserModel from "@/models/User.model";
 import { ApiResponse } from "@/types/api.types";
 import { LoginBody } from "@/types/user.types";
 import { NextRequest, NextResponse } from "next/server";
